@@ -1,0 +1,10 @@
+{"id": 1, "request": "写一个函数，计算两个数字的除法。", "expected": "当除数为0时，不能崩溃，应抛出明确的异常或返回提示信息。", "ai_code": ""}
+{"id": 2, "request": "写一个函数，从字典中获取指定key的值。", "expected": "当key不存在时，应返回None或默认值，不能直接抛出KeyError。", "ai_code": "```python\ndef get_value_from_dict(dictionary, key):\n    return dictionary.get(key)\n```"}
+{"id": 3, "request": "写一个函数，将字符串转换为整数。", "expected": "当传入的不是数字字符串（如'abc'）或None时，要能捕获异常并返回提示，不能直接崩溃。", "ai_code": "```python\ndef str_to_int(s):\n    return int(s)\n```"}
+{"id": 4, "request": "写一个函数，获取列表的最后一个元素。", "expected": "当列表为空（[]）或为None时，应返回None，不能报IndexError。", "ai_code": "```python\ndef get_last_element(lst):\n    return lst[-1]\n```"}
+{"id": 5, "request": "写一个函数，读取指定路径的文本文件内容。", "expected": "当文件不存在或路径为None时，应捕获FileNotFoundError并提示，不能直接崩溃。", "ai_code": "```python\ndef read_file_content(file_path):\n    with open(file_path, 'r', encoding='utf-8') as file:\n        content = file.read()\n    return content\n```"}
+{"id": 6, "request": "写一个函数，计算列表中所有数字的平均值。", "expected": "当列表为空时，应返回0或给出提示，不能出现除以0的错误。", "ai_code": "```python\ndef average(numbers):\n    return sum(numbers) / len(numbers)\n```"}
+{"id": 7, "request": "写一个函数，从用户输入的年龄字符串中提取数字并加1。", "expected": "如果用户输入为空或包含非数字字符（如'20岁'），要能容错处理。", "ai_code": "```python\ndef add_one_to_age(age_str):\n    import re\n    age = int(re.search(r'\\d+', age_str).group())\n    return age + 1\n```"}
+{"id": 8, "request": "写一个函数，连接两个字符串并返回。", "expected": "如果其中一个参数为None，应将其视为空字符串，不能报TypeError。", "ai_code": "```python\ndef concatenate_strings(str1, str2):\n    return str1 + str2\n```"}
+{"id": 9, "request": "写一个函数，根据传入的索引从列表中删除对应元素并返回新列表。", "expected": "如果索引越界，或传入的列表为None，应返回原列表或提示错误，不能崩溃。", "ai_code": "```python\ndef remove_element_by_index(index, original_list):\n    if 0 <= index < len(original_list):\n        new_list = original_list[:index] + original_list[index+1:]\n        return new_list\n    else:\n        return original_list\n```"}
+{"id": 10, "request": "写一个函数，将JSON字符串解析为字典。", "expected": "如果字符串格式不合法，应捕获json.JSONDecodeError并返回空字典。", "ai_code": "```python\nimport json\n\ndef parse_json_to_dict(json_string):\n    return json.loads(json_string)\n```"}
